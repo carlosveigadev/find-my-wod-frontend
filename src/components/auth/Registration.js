@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import submitUserData from '../../api';
+import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
+import submitUserData from '../../api/index';
 
-const Registration = () => {
+const Registration = props => {
+  const history = useHistory();
+  const { handleSuccessfulAuth } = props;
   const [email, setEmail] = useState('');
-  // const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  // const [registrationErrors, setRegistrationErrors] = useState('');
 
   const handleSubmit = event => {
-    submitUserData({ email, password, passwordConfirmation });
+    submitUserData({
+      email, password, passwordConfirmation, handleSuccessfulAuth,
+    });
+    history.push('/dashboard');
     event.preventDefault();
   };
 
@@ -66,6 +71,10 @@ const Registration = () => {
       </form>
     </div>
   );
+};
+
+Registration.propTypes = {
+  handleSuccessfulAuth: PropTypes.func.isRequired,
 };
 
 export default Registration;

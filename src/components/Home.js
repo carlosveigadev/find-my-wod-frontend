@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import Registration from './auth/Registration';
 
 const Home = props => {
-  const { info } = props;
+  const { info, updateInfo } = props;
+
+  const handleSuccessfulAuth = data => {
+    updateInfo({ loggedInStatus: 'LOGGED_IN', user: data.user });
+  };
+
   return (
     <div>
       <h1>Home</h1>
@@ -12,13 +17,14 @@ const Home = props => {
         {' '}
         {info.loggedInStatus}
       </h1>
-      <Registration />
+      <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
     </div>
   );
 };
 
 Home.propTypes = {
   info: PropTypes.objectOf(PropTypes.any).isRequired,
+  updateInfo: PropTypes.func.isRequired,
 };
 
 export default Home;
