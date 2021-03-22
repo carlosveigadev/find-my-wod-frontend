@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bottega-code-school/js-builder.git"
+    "url": "https://github.com/carlosveigadev/find-my-wod-frontend"
   },
   "keywords": [
     "es6",
@@ -28,9 +28,9 @@
   "author": "Your Name Here",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bottega-code-school/js-builder/issues"
+    "url": "https://github.com/carlosveigadev/find-my-wod-frontend/issues"
   },
-  "homepage": "https://github.com/bottega-code-school/js-builder",
+  "homepage": "https://github.com/carlosveigadev/find-my-wod-frontend",
   "dependencies": {
     "ajv": "6.12.0",
     "autoprefixer": "^9.1.0",
