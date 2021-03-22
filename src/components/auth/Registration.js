@@ -26,6 +26,7 @@ const Registration = () => {
       default:
         return null;
     }
+    return null;
   };
 
   return (
