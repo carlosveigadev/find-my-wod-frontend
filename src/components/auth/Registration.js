@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import submitUserData from '../../api';
 
 const Registration = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +10,7 @@ const Registration = () => {
 
   const handleSubmit = event => {
     console.log('Form Submitted');
+    submitUserData({ email, password, passwordConfirmation });
     event.preventDefault();
   };
 
