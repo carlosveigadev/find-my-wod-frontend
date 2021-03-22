@@ -12,7 +12,9 @@ const Routes = props => {
         <Route exact path="/">
           <Home info={info} />
         </Route>
-        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/dashboard">
+          <Dashboard info={info} />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
