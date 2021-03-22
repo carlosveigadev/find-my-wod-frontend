@@ -13,10 +13,11 @@ const submitUserData = object => {
       },
     },
     { withCredentials: true }).then(response => {
-    console.log('resgistration res', response);
-  }).catch(error => {
-    console.log('reg error', error);
-  });
+    if (response.data.status === 'created') {
+      return response.data;
+    }
+    return 'Something went wrong';
+  }).catch(error => error);
 };
 
 export default submitUserData;

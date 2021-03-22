@@ -9,7 +9,6 @@ const Registration = () => {
   // const [registrationErrors, setRegistrationErrors] = useState('');
 
   const handleSubmit = event => {
-    console.log('Form Submitted');
     submitUserData({ email, password, passwordConfirmation });
     event.preventDefault();
   };
