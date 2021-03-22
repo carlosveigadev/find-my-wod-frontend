@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://localhost:3001';
+const URL = 'http://localhost:3001';
 
 const submitUserData = object => {
   const { email, password, passwordConfirmation } = object;
