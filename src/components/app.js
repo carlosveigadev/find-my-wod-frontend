@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Home from './Home';
 
-const App = () => {
+const App = () => (
   <div className="app">
     <BrowserRouter>
       <Switch>
@@ -11,7 +11,7 @@ const App = () => {
         <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </BrowserRouter>
-  </div>;
-};
+  </div>
+);
 
 export default App;
