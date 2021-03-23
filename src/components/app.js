@@ -9,6 +9,10 @@ const App = () => {
     setUserInfo(data);
   };
 
+  const handleLoggout = () => {
+    updateInfo({ loggedInStatus: 'NOT_LOGGED_IN', user: {} });
+  };
+
   useEffect(() => {
     axios.get('http://localhost:3001/logged_in', { withCredentials: true })
       .then(response => {
@@ -27,7 +31,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <Routes info={userInfo} updateInfo={updateInfo} />
+      <Routes info={userInfo} updateInfo={updateInfo} handleLoggout={handleLoggout} />
     </div>
   );
 };

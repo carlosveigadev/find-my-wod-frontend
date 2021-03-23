@@ -5,12 +5,12 @@ import Dashboard from '../components/Dashboard';
 import Home from '../components/Home';
 
 const Routes = props => {
-  const { info, updateInfo } = props;
+  const { info, updateInfo, handleLoggout } = props;
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Home info={info} updateInfo={updateInfo} />
+          <Home info={info} updateInfo={updateInfo} handleLoggout={handleLoggout} />
         </Route>
         <Route exact path="/dashboard">
           <Dashboard info={info} />
@@ -23,6 +23,7 @@ const Routes = props => {
 Routes.propTypes = {
   info: PropTypes.objectOf(PropTypes.any).isRequired,
   updateInfo: PropTypes.func.isRequired,
+  handleLoggout: PropTypes.func.isRequired,
 };
 
 export default Routes;

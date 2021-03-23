@@ -44,3 +44,12 @@ export const loginUserData = object => {
     })
     .catch(error => error);
 };
+
+export const removeSession = element => {
+  axios.delete(`${URL}/logout`, { withCredentials: true })
+    .then(response => {
+      element();
+      return response;
+    })
+    .catch(error => error);
+};

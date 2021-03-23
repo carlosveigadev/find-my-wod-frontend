@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Registration from './auth/Registration';
 import Login from './auth/Login';
+import { removeSession } from '../api';
 
 const Home = props => {
-  const { info, updateInfo } = props;
+  const { info, updateInfo, handleLoggout } = props;
 
   const handleSuccessfulAuth = data => {
     updateInfo({ loggedInStatus: 'LOGGED_IN', user: data.user });
+  };
+
+  const handleLoggoutClick = () => {
+    removeSession(handleLoggout());
   };
 
   return (
@@ -18,6 +23,7 @@ const Home = props => {
         {' '}
         {info.loggedInStatus}
       </h1>
+      <button type="button" onClick={handleLoggoutClick}>Logout</button>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
       <Login handleSuccessfulAuth={handleSuccessfulAuth} />
     </div>
@@ -27,6 +33,7 @@ const Home = props => {
 Home.propTypes = {
   info: PropTypes.objectOf(PropTypes.any).isRequired,
   updateInfo: PropTypes.func.isRequired,
+  handleLoggout: PropTypes.func.isRequired,
 };
 
 export default Home;
