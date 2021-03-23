@@ -53,3 +53,19 @@ export const removeSession = element => {
     })
     .catch(error => error);
 };
+
+export const checkUserSession = (updateInfo, userInfo) => {
+  axios.get('http://localhost:3001/logged_in', { withCredentials: true })
+    .then(response => {
+      if (response.data.logged_in && userInfo.loggedInStatus === 'NOT_LOGGED_IN') {
+        updateInfo(
+          { loggedInStatus: 'LOGGED_IN', user: response.data.user },
+        );
+      } else if (!response.data.logged_in && userInfo.loggedInStatus === 'LOGGED_IN') {
+        updateInfo(
+          { loggedInStatus: 'NOT_LOGGED_IN', user: {} },
+        );
+      }
+    })
+    .catch(error => error);
+};

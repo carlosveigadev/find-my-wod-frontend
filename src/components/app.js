@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Routes from '../routes';
+import { checkUserSession } from '../api';
 
 const App = () => {
   const [userInfo, setUserInfo] = useState({ loggedInStatus: 'NOT_LOGGED_IN', user: {} });
@@ -14,19 +15,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3001/logged_in', { withCredentials: true })
-      .then(response => {
-        if (response.data.logged_in && userInfo.loggedInStatus === 'NOT_LOGGED_IN') {
-          updateInfo(
-            { loggedInStatus: 'LOGGED_IN', user: response.data.user },
-          );
-        } else if (!response.data.logged_in && userInfo.loggedInStatus === 'LOGGED_IN') {
-          updateInfo(
-            { loggedInStatus: 'NOT_LOGGED_IN', user: {} },
-          );
-        }
-      })
-      .catch(error => error);
+    checkUserSession(updateInfo, userInfo);
   }, []);
 
   return (
