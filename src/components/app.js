@@ -22,7 +22,7 @@ const App = () => {
           );
         }
       })
-      .catch(error => console.log(error));
+      .catch(error => error);
   }, []);
 
   return (
