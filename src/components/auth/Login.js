@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import loginUserData from '../../api/index';
+import { loginUserData } from '../../api/index';
 
 const Login = props => {
   const history = useHistory();
@@ -10,7 +10,7 @@ const Login = props => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = event => {
-    submitUserData({
+    loginUserData({
       email, password, handleSuccessfulAuth,
     });
     history.push('/dashboard');

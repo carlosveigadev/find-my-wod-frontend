@@ -19,7 +19,7 @@ const Home = props => {
         {info.loggedInStatus}
       </h1>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-      {/* <Login handleSuccessfulAuth={handleSuccessfulAuth} /> */}
+      <Login handleSuccessfulAuth={handleSuccessfulAuth} />
     </div>
   );
 };
