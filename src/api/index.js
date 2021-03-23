@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const URL = 'http://localhost:3001';
 
-const submitUserData = object => {
+export const submitUserData = object => {
   const {
     email, password, passwordConfirmation, handleSuccessfulAuth,
   } = object;
@@ -15,8 +15,32 @@ const submitUserData = object => {
       },
     },
     { withCredentials: true })
-    .then(response => { handleSuccessfulAuth(response.data); })
+    .then(response => {
+      if (response.data.status === 'created') {
+        handleSuccessfulAuth(response.data);
+      }
+      return 'Error';
+    })
     .catch(error => error);
 };
 
-export default submitUserData;
+export const loginUserData = object => {
+  const {
+    email, password, handleSuccessfulAuth,
+  } = object;
+  axios.post(`${URL}/sessions`,
+    {
+      user: {
+        email,
+        password,
+      },
+    },
+    { withCredentials: true })
+    .then(response => {
+      if (response.data.logged_in) {
+        handleSuccessfulAuth(response.data);
+      }
+      return 'Error';
+    })
+    .catch(error => error);
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Registration from './auth/Registration';
+import Login from './auth/Login';
 
 const Home = props => {
   const { info, updateInfo } = props;
@@ -18,6 +19,7 @@ const Home = props => {
         {info.loggedInStatus}
       </h1>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+      {/* <Login handleSuccessfulAuth={handleSuccessfulAuth} /> */}
     </div>
   );
 };

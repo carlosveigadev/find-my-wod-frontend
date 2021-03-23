@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { submitUserData } from '../../api/index';
+import loginUserData from '../../api/index';
 
-const Registration = props => {
+const Login = props => {
   const history = useHistory();
   const { handleSuccessfulAuth } = props;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   const handleSubmit = event => {
     submitUserData({
-      email, password, passwordConfirmation, handleSuccessfulAuth,
+      email, password, handleSuccessfulAuth,
     });
     history.push('/dashboard');
     event.preventDefault();
@@ -25,9 +24,6 @@ const Registration = props => {
         break;
       case 'password':
         setPassword(event.target.value);
-        break;
-      case 'password_confirmation':
-        setPasswordConfirmation(event.target.value);
         break;
       default:
         return null;
@@ -56,25 +52,16 @@ const Registration = props => {
           required
         />
 
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password Confirmation"
-          value={passwordConfirmation}
-          onChange={handleChange}
-          required
-        />
-
         <button type="submit">
-          Register
+          Login
         </button>
       </form>
     </div>
   );
 };
 
-Registration.propTypes = {
+Login.propTypes = {
   handleSuccessfulAuth: PropTypes.func.isRequired,
 };
 
-export default Registration;
+export default Login;
