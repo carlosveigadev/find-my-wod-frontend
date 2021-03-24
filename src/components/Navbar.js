@@ -5,10 +5,8 @@ function Navbar() {
     <>
       <h2>Image</h2>
       <h3>email</h3>
-      <div>
-        <Link to="/wods">Dashboard </Link>
-        <Link to="/favourites">Favourites </Link>
-      </div>
+      <Link to="/wods">Dashboard </Link>
+      <Link to="/favourites">Favourites </Link>
       <Link to="/about">About </Link>
       <h2>Logout</h2>
     </>
