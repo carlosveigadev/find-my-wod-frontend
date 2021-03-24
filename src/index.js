@@ -9,7 +9,7 @@ import Routes from './routes';
 // create store
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider>
     <BrowserRouter>
       <Routes />
     </BrowserRouter>
