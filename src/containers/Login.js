@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import jwt from 'jwt-decode';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { logInUser } from '../api-requests';
 import { userData } from '../redux/actions';
 
