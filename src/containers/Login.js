@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logInUser from '../api-requests';
+import { logInUser } from '../api-requests';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -23,7 +23,7 @@ const Login = () => {
   return (
     <form>
       <h1>Log In</h1>
-      <h2>Hello there! Log in to start your WOD.</h2>
+      <h2>Hello there! Log in to start using Find My Wod.</h2>
       <input type="email" id="email" placeholder="email" required onChange={handleChange} />
       <input type="password" id="password" placeholder="password" required onChange={handleChange} />
       <button type="submit" onClick={handleSubmit}>Log In</button>

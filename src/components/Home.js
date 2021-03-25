@@ -1,6 +1,6 @@
 import Login from '../containers/Login';
 import Navbar from './Navbar';
-import SignIn from './SignIn';
+import SignIn from '../containers/SignIn';
 
 const Home = () => (
   <>

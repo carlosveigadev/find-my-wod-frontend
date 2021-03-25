@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import logInUser from '../api-requests';
+import { SignInRequest } from '../api-requests';
 
 const Login = () => {
   const [state, setState] = useState({
-    email: '',
-    password: '',
+    emailSignIn: '',
+    passwordSignIn: '',
     password_confirmation: '',
   });
 
@@ -18,17 +18,17 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    logInUser(state);
+    SignInRequest(state);
   };
 
   return (
     <form>
       <h1>Log In</h1>
-      <h2>Hello there! Log in to start your WOD.</h2>
-      <input type="email" id="email" placeholder="email" required onChange={handleChange} />
-      <input type="password" id="password" placeholder="password" required onChange={handleChange} />
+      <h2>Hello there! Sing in to start using Find My Wod.</h2>
+      <input type="email" id="emailSignIn" placeholder="email" required onChange={handleChange} />
+      <input type="password" id="passwordSignIn" placeholder="password" required onChange={handleChange} />
       <input type="password" id="password_confirmation" placeholder="password_confirmation" required onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>Log In</button>
+      <button type="submit" onClick={handleSubmit}>Sign In</button>
     </form>
   );
 };
