@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { connect } from 'react-redux';
+import jwt from 'jwt-decode';
+import { useHistory } from 'react-router';
 import { logInUser } from '../api-requests';
 import { userData } from '../redux/actions';
 
@@ -18,6 +20,8 @@ const Login = ({ userData }) => {
     }));
   };
 
+  const history = useHistory();
+
   const handleSubmit = async e => {
     e.preventDefault();
     const data = await logInUser(state);
@@ -25,9 +29,10 @@ const Login = ({ userData }) => {
       const populateReduxStore = {
         isLoggedIn: true,
         userToken: data.data.auth_token,
-        userInfo: '',
+        userInfo: jwt(data.data.auth_token).email,
       };
       userData(populateReduxStore);
+      history.push('/');
     }
   };
 

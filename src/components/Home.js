@@ -23,7 +23,7 @@ const Home = ({ isLoggedIn }) => {
 };
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.user.isLoggedIn,
+  isLoggedIn: state.isLoggedIn,
 });
 
 Home.propTypes = {
