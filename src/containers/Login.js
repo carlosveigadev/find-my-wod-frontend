@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { connect } from 'react-redux';
 import { logInUser } from '../api-requests';
+import { userData } from '../redux/actions';
 
-const Login = () => {
+const Login = ({ userData }) => {
   const [state, setState] = useState({
     email: '',
     password: '',
@@ -15,9 +18,17 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    logInUser(state);
+    const data = await logInUser(state);
+    if (data.statusText === 'OK') {
+      const populateReduxStore = {
+        isLoggedIn: true,
+        userToken: data.data.auth_token,
+        userInfo: '',
+      };
+      userData(populateReduxStore);
+    }
   };
 
   return (
@@ -31,4 +42,12 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatch = {
+  userData,
+};
+
+Login.propTypes = {
+  userData: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatch)(Login);

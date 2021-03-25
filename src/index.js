@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import userReducer from './redux/reducers/user';
 
+const rootReducer = combineReducers({ userStore: userReducer });
+
 /* eslint-disable no-underscore-dangle */
-const store = createStore(userReducer,
+const store = createStore(rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
 

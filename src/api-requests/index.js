@@ -9,7 +9,7 @@ export const logInUser = data => axios({
   headers: {
     'Content-Type': 'application/json',
   },
-}).then(res => console.log(res)).catch(err => err);
+}).then(res => res).catch(err => err);
 
 export const SignInRequest = data => {
   const { email, password, passwordConfirmation } = data;
@@ -20,5 +20,5 @@ export const SignInRequest = data => {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(res => console.log(res)).catch(err => err);
+  }).then(res => res).catch(err => err);
 };

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Home = ({ isLoggedIn }) => {
-  console.log(isLoggedIn);
   if (isLoggedIn) {
     return (
       <>
@@ -24,7 +23,7 @@ const Home = ({ isLoggedIn }) => {
 };
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.isLoggedIn,
+  isLoggedIn: state.user.isLoggedIn,
 });
 
 Home.propTypes = {
