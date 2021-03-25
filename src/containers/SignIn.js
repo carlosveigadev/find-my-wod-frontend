@@ -26,7 +26,7 @@ const SignIn = ({ userData }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     const data = await SignInRequest(state);
-    if (data.statusText === 'OK') {
+    if (data.statusText === 'Created') {
       const populateReduxStore = {
         isLoggedIn: true,
         userToken: data.data.auth_token,
