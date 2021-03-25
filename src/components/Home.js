@@ -1,5 +1,6 @@
 import Login from '../containers/Login';
 import Navbar from './Navbar';
+import SignIn from './SignIn';
 
 const Home = () => (
   <>
@@ -8,6 +9,7 @@ const Home = () => (
       Hi, here you can check all the Wods available.
     </h1>
     <Login />
+    <SignIn />
   </>
 );
 
