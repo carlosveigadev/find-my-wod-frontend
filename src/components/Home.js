@@ -1,16 +1,34 @@
-import Login from '../containers/Login';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import SignIn from '../containers/SignIn';
 
-const Home = () => (
-  <>
-    <Navbar />
-    <h1>
-      Hi, here you can check all the Wods available.
-    </h1>
-    <Login />
-    <SignIn />
-  </>
-);
+const Home = ({ isLoggedIn }) => {
+  console.log(isLoggedIn);
+  if (isLoggedIn) {
+    return (
+      <>
+        <Navbar />
+        <h1>
+          Hi, here you can check all the Wods available.
+        </h1>
+      </>
+    );
+  }
+  return (
+    <>
+      <Link to={{ pathname: '/login' }}>Log In</Link>
+      <Link to={{ pathname: '/signin' }}>Sign In</Link>
+    </>
+  );
+};
 
-export default Home;
+const mapStateToProps = state => ({
+  isLoggedIn: state.isLoggedIn,
+});
+
+Home.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
+
+export default connect(mapStateToProps)(Home);
