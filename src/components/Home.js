@@ -1,3 +1,4 @@
+import Login from '../containers/Login';
 import Navbar from './Navbar';
 
 const Home = () => (
@@ -6,6 +7,7 @@ const Home = () => (
     <h1>
       Hi, here you can check all the Wods available.
     </h1>
+    <Login />
   </>
 );
 
