@@ -11,14 +11,15 @@ export const logInUser = data => axios({
   },
 }).then(res => res).catch(err => err);
 
-export const SignInRequest = data => {
-  const { email, password, passwordConfirmation } = data;
-  return axios({
-    url: `${URL}/signup`,
-    data: JSON.stringify({ email, password, passwordConfirmation }),
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then(res => res).catch(err => err);
-};
+export const SignInRequest = async data => axios({
+  url: `${URL}/signup`,
+  data: JSON.stringify({
+    email: data.emailSignIn,
+    password: data.passwordSignIn,
+    password_confirmation: data.password_confirmation,
+  }),
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}).then(res => res).catch(err => err);

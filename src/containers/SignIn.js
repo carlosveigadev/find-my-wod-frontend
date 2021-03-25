@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import jwt from 'jwt-decode';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { SignInRequest } from '../api-requests';
+import { userData } from '../redux/actions';
 
-const Login = () => {
+const SignIn = ({ userData }) => {
   const [state, setState] = useState({
     emailSignIn: '',
     passwordSignIn: '',
@@ -16,9 +21,20 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = e => {
+  const history = useHistory();
+
+  const handleSubmit = async e => {
     e.preventDefault();
-    SignInRequest(state);
+    const data = await SignInRequest(state);
+    if (data.statusText === 'OK') {
+      const populateReduxStore = {
+        isLoggedIn: true,
+        userToken: data.data.auth_token,
+        userInfo: jwt(data.data.auth_token).email,
+      };
+      userData(populateReduxStore);
+      history.push('/');
+    }
   };
 
   return (
@@ -33,4 +49,12 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatch = {
+  userData,
+};
+
+SignIn.propTypes = {
+  userData: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatch)(SignIn);
