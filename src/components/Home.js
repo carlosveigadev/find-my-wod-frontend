@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Home = ({ isLoggedIn }) => {
-  console.log(isLoggedIn);
   if (isLoggedIn) {
     return (
       <>
