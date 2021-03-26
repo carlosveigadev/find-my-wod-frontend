@@ -26,7 +26,6 @@ const Login = ({ userData }) => {
     e.preventDefault();
     const data = await logInUser(state);
     if (data.statusText === 'OK') {
-      console.log(jwt(data.data.auth_token));
       const populateReduxStore = {
         isLoggedIn: true,
         userToken: data.data.auth_token,

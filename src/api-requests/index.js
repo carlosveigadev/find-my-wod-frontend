@@ -23,3 +23,21 @@ export const SignInRequest = async data => axios({
     'Content-Type': 'application/json',
   },
 }).then(res => res).catch(err => err);
+
+export const getWods = async token => {
+  try {
+    const response = await axios({
+      url: `${URL}/api/v1/wods`,
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    });
+    const newData = await response.data;
+    return newData;
+  } catch (error) {
+    return null;
+  }
+};
