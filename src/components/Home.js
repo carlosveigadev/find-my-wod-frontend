@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Wods from '../containers/Wods';
 
 const Home = ({ isLoggedIn }) => {
   if (isLoggedIn) {
@@ -11,6 +12,7 @@ const Home = ({ isLoggedIn }) => {
         <h1>
           Hi, here you can check all the Wods available.
         </h1>
+        <Wods />
       </>
     );
   }
