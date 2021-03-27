@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 const WodsId = ({ location }) => {
+  // add option to make the wod favourite or not, checking the reduxStore to see if its a favourite or not
   const { wod } = location.state;
   return (
     <>
