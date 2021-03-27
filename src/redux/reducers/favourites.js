@@ -1,6 +1,6 @@
 import { FAVOURITE_DATA } from '../actions';
 
-const favouriteReducer = (state = {}, action) => {
+const favouriteReducer = (state = [{}], action) => {
   switch (action.type) {
     case FAVOURITE_DATA:
       return action.payload;

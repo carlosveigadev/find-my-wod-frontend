@@ -43,7 +43,6 @@ const mapStateToProps = state => ({
 Wods.propTypes = {
   userToken: PropTypes.string.isRequired,
   favouriteData: PropTypes.func.isRequired,
-
 };
 
 export default connect(mapStateToProps, mapDispatch)(Wods);
