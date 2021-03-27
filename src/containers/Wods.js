@@ -12,6 +12,10 @@ const Wods = ({ userToken }) => {
     setWods(allWods);
   }, []);
 
+  useEffect(async () => {
+
+  });
+
   if (wods) {
     return (
       <>

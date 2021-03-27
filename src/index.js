@@ -6,8 +6,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
 import userReducer from './redux/reducers/user';
+import favouriteReducer from './redux/reducers/favourites';
 
-const rootReducer = combineReducers({ userStore: userReducer });
+const rootReducer = combineReducers({ userStore: userReducer, favouriteStore: favouriteReducer });
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(rootReducer,
