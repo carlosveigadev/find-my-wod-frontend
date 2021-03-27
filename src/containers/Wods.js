@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getWods } from '../api-requests';
 
 const Wods = ({ userToken }) => {
@@ -8,15 +9,13 @@ const Wods = ({ userToken }) => {
 
   useEffect(async () => {
     const allWods = await getWods(userToken);
-    console.log(allWods);
     setWods(allWods);
   }, []);
 
   if (wods) {
-    console.log(wods);
     return (
       <>
-        {wods.map(wod => <div key={wod.id}>{wod.title}</div>)}
+        {wods.map(wod => <Link key={wod.id} to={{ pathname: `/wods/${wod.id}`, state: { wod } }}>{wod.title}</Link>)}
       </>
     );
   }
