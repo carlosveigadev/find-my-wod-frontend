@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { favouriteRequest, fetchFavourites } from '../api-requests';
 import { favouriteData } from '../redux/actions';
 
@@ -7,6 +8,7 @@ const WodsId = ({
   location, favouriteWods, userToken, favouriteData,
 }) => {
   const { wod } = location.state;
+  const history = useHistory();
 
   const ids = [];
   favouriteWods.map(item => ids.push(item.id));
@@ -26,6 +28,14 @@ const WodsId = ({
       {ids.includes(wod.id)
         ? <button type="button" id="unfavourite" onClick={handleSubmit}>Unstar</button>
         : <button type="button" id="favourite" onClick={handleSubmit}>Star</button>}
+      <button
+        type="button"
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        Go back
+      </button>
     </>
   );
 };
