@@ -59,3 +59,21 @@ export const fetchFavourites = async token => {
     return null;
   }
 };
+
+export const favouriteRequest = async (wodId, status, token) => {
+  try {
+    const response = await axios({
+      url: `${URL}/api/v1/wods/${wodId}/${status}`,
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+    });
+    const newData = await response.data;
+    return newData;
+  } catch (error) {
+    return null;
+  }
+};
