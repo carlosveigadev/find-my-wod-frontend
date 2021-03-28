@@ -4,6 +4,7 @@ import './index.css';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
 import Routes from './routes';
 import userReducer from './redux/reducers/user';
 import favouriteReducer from './redux/reducers/favourites';
@@ -16,10 +17,12 @@ const store = createStore(rootReducer,
 /* eslint-enable */
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  </Provider>,
+  <ChakraProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Provider>
+  </ChakraProvider>,
   document.getElementById('root'),
 );
