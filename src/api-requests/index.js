@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3001';
+const URL = 'https://find-my-wod-api.herokuapp.com';
 
 export const logInUser = data => axios({
   url: `${URL}/auth/login`,
