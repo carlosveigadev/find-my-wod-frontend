@@ -1,4 +1,6 @@
+import { Center, Flex } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
+import { AiOutlineBackward } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { favouriteRequest, fetchFavourites } from '../api-requests';
@@ -22,20 +24,25 @@ const WodsId = ({
 
   return (
     <>
-      <h1>{wod.title}</h1>
-      <h2>{wod.description}</h2>
-      <h2>{wod.image}</h2>
-      {ids.includes(wod.id)
-        ? <button type="button" id="unfavourite" onClick={handleSubmit}>Unstar</button>
-        : <button type="button" id="favourite" onClick={handleSubmit}>Star</button>}
-      <button
-        type="button"
-        onClick={() => {
-          history.goBack();
-        }}
-      >
-        Go back
-      </button>
+      <Flex>
+        <Center>
+          <button
+            type="button"
+            onClick={() => {
+              history.goBack();
+            }}
+          >
+            <AiOutlineBackward fontSize="2em" color="darkgray" />
+          </button>
+        </Center>
+        <h1>{wod.title}</h1>
+        <h2>{wod.description}</h2>
+        <h2>{wod.image}</h2>
+        {ids.includes(wod.id)
+          ? <button type="button" id="unfavourite" onClick={handleSubmit}>Unstar</button>
+          : <button type="button" id="favourite" onClick={handleSubmit}>Star</button>}
+
+      </Flex>
     </>
   );
 };

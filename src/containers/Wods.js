@@ -35,7 +35,7 @@ const Wods = ({ userToken, favouriteData }) => {
 
   if (wods) {
     return (
-      <Box m="1em" boxShadow="2xl" p="6" rounded="md" bg="white" pb="5em">
+      <Box m="1em" mt="3em" boxShadow="2xl" p="6" rounded="md" bg="white" pb="5em">
         <Slider {...sliderSettings}>
           {wods.map(wod => {
             const video = `https://www.youtube.com/embed/${wod.image}`;
