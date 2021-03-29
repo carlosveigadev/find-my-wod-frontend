@@ -12,7 +12,7 @@ function Navbar({ email }) {
       <Text mt="4em" mb="1em"><Link to="/">Dashboard </Link></Text>
       <Text my="1em"><Link to="/favourites">Favourites </Link></Text>
       <Text my="1em"><Link to="/about">About </Link></Text>
-      <Text alignSelf="bottom" fontSize="sm" mt="22em"><h2>Logout</h2></Text>
+      <Text alignSelf="bottom" fontSize="sm" mt="22em">Logout</Text>
     </Flex>
   );
 }
