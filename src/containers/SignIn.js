@@ -49,7 +49,7 @@ const SignIn = ({ userData }) => {
       <Box bgColor="rgb(255, 255, 255, 0.65)">
         <Flex flexDirection="column" h="100vh" pt="35vh">
           <form>
-            <Text align="center" fontSize="xl">Sign In</Text>
+            <Text align="center" fontSize="xl">Sign Up</Text>
             <Text align="center" fontSize="xs">Hello there! Sing in to start using Find My Wod.</Text>
             <input type="email" id="emailSignIn" placeholder="E-mail" required onChange={handleChange} />
             <input type="password" id="passwordSignIn" placeholder="Password" required onChange={handleChange} />

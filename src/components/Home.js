@@ -64,7 +64,7 @@ const Home = ({ isLoggedIn }) => {
               <Text align="center" fontSize="xs">Choose an option to start.</Text>
             </Box>
             <Link className={style.button} to={{ pathname: '/login' }}> Log In </Link>
-            <Link className={style.button} to={{ pathname: '/signin' }}>Sign In</Link>
+            <Link className={style.button} to={{ pathname: '/signin' }}>Sign Up</Link>
           </Flex>
         </Center>
       </Box>
