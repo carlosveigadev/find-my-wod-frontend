@@ -11,7 +11,7 @@ function Navbar({ email }) {
       <Text my="1em" as="em">{email}</Text>
       <Text mt="4em" mb="1em"><Link to="/">Dashboard </Link></Text>
       <Text my="1em"><Link to="/favourites">Favourites </Link></Text>
-      <Text my="1em"><Link to="/about">About </Link></Text>
+      <Text my="1em"><Link to="/about">Instructions </Link></Text>
       <Text alignSelf="bottom" fontSize="sm" mt="22em">Logout</Text>
     </Flex>
   );
