@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { logInUser } from '../api-requests';
 import { userData } from '../redux/actions';
-import style from '../assets/css/LogIn.module.css';
+import style from '../assets/css/Authorizaton.module.css';
 
 const Login = ({ userData }) => {
   const [state, setState] = useState({

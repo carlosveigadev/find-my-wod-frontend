@@ -3,8 +3,10 @@ import { useHistory } from 'react-router-dom';
 import jwt from 'jwt-decode';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { SignInRequest } from '../api-requests';
 import { userData } from '../redux/actions';
+import style from '../assets/css/Authorizaton.module.css';
 
 const SignIn = ({ userData }) => {
   const [state, setState] = useState({
@@ -38,14 +40,25 @@ const SignIn = ({ userData }) => {
   };
 
   return (
-    <form>
-      <h1>Log In</h1>
-      <h2>Hello there! Sing in to start using Find My Wod.</h2>
-      <input type="email" id="emailSignIn" placeholder="email" required onChange={handleChange} />
-      <input type="password" id="passwordSignIn" placeholder="password" required onChange={handleChange} />
-      <input type="password" id="password_confirmation" placeholder="password_confirmation" required onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>Sign In</button>
-    </form>
+    <Box
+      bgSize="100% 100%"
+      bgPosition="Center"
+      bgImage="url(../assets/images/logo.jpg)"
+      bgRepeat="no-repeat"
+    >
+      <Box bgColor="rgb(255, 255, 255, 0.65)">
+        <Flex flexDirection="column" h="100vh" pt="35vh">
+          <form>
+            <Text align="center" fontSize="xl">Sign In</Text>
+            <Text align="center" fontSize="xs">Hello there! Sing in to start using Find My Wod.</Text>
+            <input type="email" id="emailSignIn" placeholder="E-mail" required onChange={handleChange} />
+            <input type="password" id="passwordSignIn" placeholder="Password" required onChange={handleChange} />
+            <input type="password" id="password_confirmation" placeholder="Password Confirmation" required onChange={handleChange} />
+            <button className={style.button} type="submit" onClick={handleSubmit}>Sign In</button>
+          </form>
+        </Flex>
+      </Box>
+    </Box>
   );
 };
 

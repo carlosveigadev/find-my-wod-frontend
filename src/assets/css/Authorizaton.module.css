@@ -19,10 +19,11 @@ form {
 }
 
 form input {
+  height: 30px;
   margin: 0.5em;
   border-radius: 20px;
 }
 
 form input::placeholder {
-  padding-left: 10px;
+  padding: 10px;
 }
