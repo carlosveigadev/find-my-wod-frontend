@@ -4,6 +4,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { userData, favouriteData } from '../redux/actions';
+import style from '../assets/css/Authorizaton.module.css';
 
 function Navbar({
   email, userData, favouriteData,
@@ -24,7 +25,7 @@ function Navbar({
       <Text mt="4em" mb="1em"><Link to="/">Dashboard </Link></Text>
       <Text my="1em"><Link to="/favourites">Favourites </Link></Text>
       <Text my="1em"><Link to="/about">Instructions </Link></Text>
-      <button type="button" fontSize="sm" mt="17em" onClick={logout}>Logout</button>
+      <button type="button" className={style.buttonLogout} onClick={logout}>Logout</button>
     </Flex>
   );
 }

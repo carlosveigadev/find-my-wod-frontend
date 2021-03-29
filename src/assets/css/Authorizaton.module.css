@@ -24,3 +24,14 @@ form input {
   border-radius: 20px;
   text-indent: 10px;
 }
+
+.buttonLogout {
+  align-self: center;
+  color: white;
+  background-color: #c05621;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  margin: 5px;
+  position: absolute;
+  bottom: 3em;
+}
