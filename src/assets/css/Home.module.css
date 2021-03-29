@@ -10,3 +10,9 @@
 .button:hover {
   background-color: #ed8936;
 }
+
+.hamburguerIcon {
+  color: darkgray;
+  font-size: 1.5em;
+  padding: 10px;
+}
