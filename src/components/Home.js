@@ -13,6 +13,7 @@ import {
   DrawerContent,
   DrawerBody,
   DrawerCloseButton,
+  Heading,
 } from '@chakra-ui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Navbar from './Navbar';
@@ -43,9 +44,9 @@ const Home = ({ isLoggedIn }) => {
             </DrawerContent>
           </DrawerOverlay>
         </Drawer>
-        <h1>
-          Hi, here you can check all the Wods available.
-        </h1>
+        <Center py="0.75em">
+          <Heading>Wods</Heading>
+        </Center>
         <Wods />
       </>
     );
