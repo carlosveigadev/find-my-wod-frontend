@@ -3,8 +3,20 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Flex, Text } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { userData, favouriteData } from '../redux/actions';
 
-function Navbar({ email }) {
+function Navbar({
+  email, userData, favouriteData,
+}) {
+  const logout = () => {
+    const defaultFavourite = [{}];
+    const defaultUser = {
+      isLoggedIn: false, userToken: '', userInfo: '', userId: '',
+    };
+    userData(defaultUser);
+    favouriteData(defaultFavourite);
+  };
+
   return (
     <Flex direction="column" pl="1em" mt="2em">
       <FaUserCircle size="4em" />
@@ -12,7 +24,7 @@ function Navbar({ email }) {
       <Text mt="4em" mb="1em"><Link to="/">Dashboard </Link></Text>
       <Text my="1em"><Link to="/favourites">Favourites </Link></Text>
       <Text my="1em"><Link to="/about">Instructions </Link></Text>
-      <Text alignSelf="bottom" fontSize="sm" mt="22em">Logout</Text>
+      <button type="button" fontSize="sm" mt="17em" onClick={logout}>Logout</button>
     </Flex>
   );
 }
@@ -23,6 +35,14 @@ const mapStateToProps = state => ({
 
 Navbar.propTypes = {
   email: PropTypes.string.isRequired,
+  userData: PropTypes.func.isRequired,
+  favouriteData: PropTypes.func.isRequired,
+
 };
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatch = {
+  userData,
+  favouriteData,
+};
+
+export default connect(mapStateToProps, mapDispatch)(Navbar);
