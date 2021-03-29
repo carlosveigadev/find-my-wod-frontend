@@ -1,0 +1,11 @@
+.button {
+  background-color: #f96027;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2em 0;
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: bold;
+}
