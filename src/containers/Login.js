@@ -3,8 +3,12 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import jwt from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
+import {
+  Box, Flex, Text,
+} from '@chakra-ui/react';
 import { logInUser } from '../api-requests';
 import { userData } from '../redux/actions';
+import style from '../assets/css/LogIn.module.css';
 
 const Login = ({ userData }) => {
   const [state, setState] = useState({
@@ -38,13 +42,24 @@ const Login = ({ userData }) => {
   };
 
   return (
-    <form>
-      <h1>Log In</h1>
-      <h2>Hello there! Log in to start using Find My Wod.</h2>
-      <input type="email" id="email" placeholder="email" required onChange={handleChange} />
-      <input type="password" id="password" placeholder="password" required onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>Log In</button>
-    </form>
+    <Box
+      bgSize="100% 100%"
+      bgPosition="Center"
+      bgImage="url(../assets/images/logo.jpg)"
+      bgRepeat="no-repeat"
+    >
+      <Box bgColor="rgb(255, 255, 255, 0.65)">
+        <Flex flexDirection="column" h="100vh" pt="35vh">
+          <form>
+            <Text align="center" fontSize="xl">Log In</Text>
+            <Text align="center" fontSize="xs">Hello there! Log in to start using Find My Wod.</Text>
+            <input type="email" id="email" placeholder="E-mail" required onChange={handleChange} />
+            <input type="password" id="password" placeholder="Password" required onChange={handleChange} />
+            <button className={style.button} type="submit" onClick={handleSubmit}>Log In</button>
+          </form>
+        </Flex>
+      </Box>
+    </Box>
   );
 };
 
