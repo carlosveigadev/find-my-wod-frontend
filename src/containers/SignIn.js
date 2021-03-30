@@ -3,7 +3,9 @@ import { useHistory } from 'react-router-dom';
 import jwt from 'jwt-decode';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import {
+  Box, Flex, Text, useToast,
+} from '@chakra-ui/react';
 import { SignInRequest } from '../api-requests';
 import { userData } from '../redux/actions';
 import style from '../assets/css/Authorizaton.module.css';
@@ -24,6 +26,7 @@ const SignIn = ({ userData }) => {
   };
 
   const history = useHistory();
+  const toast = useToast();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -34,8 +37,25 @@ const SignIn = ({ userData }) => {
         userToken: data.data.auth_token,
         userInfo: jwt(data.data.auth_token).email,
       };
+      toast({
+        position: 'bottom-left',
+        title: 'Welcome!',
+        description: 'Account Created.',
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+      });
       userData(populateReduxStore);
       history.push('/');
+    } else {
+      toast({
+        position: 'bottom-left',
+        title: 'Something went wrong!',
+        description: 'Sorry, refresh the page and try again.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
     }
   };
 

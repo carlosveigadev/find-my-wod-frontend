@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import jwt from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 import {
-  Box, Flex, Text,
+  Box, Flex, Text, useToast,
 } from '@chakra-ui/react';
 import { logInUser } from '../api-requests';
 import { userData } from '../redux/actions';
@@ -25,6 +25,7 @@ const Login = ({ userData }) => {
   };
 
   const history = useHistory();
+  const toast = useToast();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -36,8 +37,25 @@ const Login = ({ userData }) => {
         userInfo: jwt(data.data.auth_token).email,
         userId: jwt(data.data.auth_token).user_id,
       };
+      toast({
+        position: 'bottom-left',
+        title: 'You are Logged In!',
+        description: 'Welcome to Find My Wod.',
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+      });
       userData(populateReduxStore);
       history.push('/');
+    } else {
+      toast({
+        position: 'bottom-left',
+        title: 'Something went wrong!',
+        description: 'Sorry, refresh the page and try again.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
     }
   };
 
