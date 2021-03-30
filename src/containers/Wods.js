@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import {
-  AspectRatio, Box, Center, Heading,
+  AspectRatio, Box, Center, Flex, Heading,
 } from '@chakra-ui/react';
 import { getWods, fetchFavourites } from '../api-requests';
 import { favouriteData } from '../redux/actions';
@@ -61,9 +61,9 @@ const Wods = ({ userToken, favouriteData }) => {
     );
   }
   return (
-    <>
-      <h1>Loading...</h1>
-    </>
+    <Flex direction="column" m="2em">
+      <Heading>Loading...</Heading>
+    </Flex>
   );
 };
 

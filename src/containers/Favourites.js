@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import {
   Box,
-  Center, Flex, Heading, Tag,
+  Center, Flex, Heading, Tag, Text,
 } from '@chakra-ui/react';
 import { AiOutlineBackward } from 'react-icons/ai';
 
@@ -37,17 +37,22 @@ const Favourites = ({ favouriteWods }) => {
     );
   }
   return (
-    <>
-      <h1>You have no favorite wods...</h1>
-      <h1>
-        Click
-        {' '}
-        <Link to="/">Here</Link>
-        {' '}
-        to go trough the Dashboard.
-        {' '}
-      </h1>
-    </>
+    <Flex direction="column" m="2em">
+      <Center>
+        <button
+          type="button"
+          onClick={() => {
+            history.goBack();
+          }}
+        >
+          <AiOutlineBackward fontSize="2em" color="darkgray" />
+        </button>
+      </Center>
+      <Heading align="center" as="h1" size="xl" mt="1em">You have no favorite wods...</Heading>
+      <Text my="2em">
+        Go back to the Dashboard to add WODs!
+      </Text>
+    </Flex>
   );
 };
 
