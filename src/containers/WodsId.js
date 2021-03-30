@@ -53,10 +53,10 @@ const WodsId = ({
           {ids.includes(wod.id)
             ? (
               <button className={style.button} type="button" id="unfavourite" onClick={handleSubmit}>
-                Add to Favourites
+                Remove from Favourites
               </button>
             )
-            : <button className={style.button} type="button" id="favourite" onClick={handleSubmit}>Remove from Favourites</button>}
+            : <button className={style.button} type="button" id="favourite" onClick={handleSubmit}>Add to Favourites</button>}
         </Box>
       </Box>
     </Flex>

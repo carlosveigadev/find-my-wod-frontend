@@ -8,7 +8,6 @@ export const logInUser = data => axios({
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
   },
 }).then(res => res).catch(err => err);
 
@@ -22,7 +21,6 @@ export const SignInRequest = async data => axios({
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
   },
 }).then(res => res).catch(err => err);
 
@@ -70,7 +68,6 @@ export const favouriteRequest = async (wodId, status, token) => {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
         Authorization: token,
       },
     });
