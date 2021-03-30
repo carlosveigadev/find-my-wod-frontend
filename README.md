@@ -52,7 +52,10 @@ After that, open the folder with the code editor of your choice and follow the s
 **Make sure you have [Yarn](https://yarnpkg.com/) installed in your machine.**
 **Open the terminal and go to the folder of the game and run the following commands:** <br>
 `yarn install` <br>
-`yarn start`
+`yarn start` <br>
+
+### **Warning:**
+If you want to try this project with the back-end project as your localhost, do not forget to update the URL variable inside `src/api-requests/index.js` to the back-end server URL generated (usually localhost:3001)
  
  
 **Those commands will ensure you installed the proper packages required and start the server locally, usually at localhost:3000**
