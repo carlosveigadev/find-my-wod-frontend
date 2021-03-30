@@ -43,7 +43,6 @@ export const getWods = async token => {
 };
 
 export const fetchFavourites = async token => {
-  console.log(token);
   try {
     const response = await axios({
       url: `${URL}/api/v1/favourites`,
