@@ -20,7 +20,6 @@ const Wods = ({ userToken, favouriteData }) => {
   }, []);
 
   useEffect(async () => {
-    console.log(userToken);
     const newData = await fetchFavourites(userToken);
     favouriteData(newData);
   }, []);
