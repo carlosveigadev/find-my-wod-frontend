@@ -27,7 +27,7 @@ export const SignInRequest = async data => axios({
 export const getWods = async token => {
   try {
     const response = await axios({
-      url: `${URL}/api/v1/wods`,
+      url: `${URL}/wods`,
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -45,7 +45,7 @@ export const getWods = async token => {
 export const fetchFavourites = async token => {
   try {
     const response = await axios({
-      url: `${URL}/api/v1/favourites`,
+      url: `${URL}/favourites`,
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -63,7 +63,7 @@ export const fetchFavourites = async token => {
 export const favouriteRequest = async (wodId, status, token) => {
   try {
     const response = await axios({
-      url: `${URL}/api/v1/wods/${wodId}/${status}`,
+      url: `${URL}/wods/${wodId}/${status}`,
       method: 'POST',
       headers: {
         Accept: 'application/json',
