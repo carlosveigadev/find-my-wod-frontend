@@ -9,7 +9,7 @@ import { AiOutlineBackward } from 'react-icons/ai';
 
 const Favourites = ({ favouriteWods }) => {
   const history = useHistory();
-  if (favouriteWods.length !== 0) {
+  if (favouriteWods.length !== 0 || favouriteWods === null) {
     return (
       <Flex direction="column" m="2em">
         <Center>
@@ -22,7 +22,7 @@ const Favourites = ({ favouriteWods }) => {
             <AiOutlineBackward fontSize="2em" color="darkgray" />
           </button>
         </Center>
-        <Heading as="h1" size="xl" mt="1em">Favourite Wods</Heading>
+        <Heading as="h1" size="xl" mt="1em">Favourite WODs</Heading>
         <Box mt="2em">
           {favouriteWods.map(wod => (
             <Tag key={wod.id} p="15px" mr="1em" fontSize="1.5em" colorScheme="orange">
@@ -32,7 +32,6 @@ const Favourites = ({ favouriteWods }) => {
             </Tag>
           ))}
         </Box>
-
       </Flex>
     );
   }

@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check if routes work  renders About page correctly in the proper route. 1`] = `
+<div
+  className="css-1166ll3"
+>
+  <div
+    className="css-gmuwbf"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="darkgray"
+        fill="currentColor"
+        fontSize="2em"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "darkgray",
+          }
+        }
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M485.6 249.9L198.2 498c-8.3 7.1-8.3 20.8 0 27.9l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9zm320 0L518.2 498a18.6 18.6 0 0 0-6.2 14c0 5.2 2.1 10.4 6.2 14l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9z"
+        />
+      </svg>
+    </button>
+  </div>
+  <h1
+    className="chakra-heading css-16f1609"
+  >
+    Instructions
+  </h1>
+  <div
+    className="css-174o6v9"
+  >
+    <h2
+      className="chakra-heading css-0"
+    >
+      Workout of the day (WOD):
+    </h2>
+    <p
+      className="chakra-text css-0"
+    >
+      Plain and simple, this is the set of modalities that your coach uses to put you through hell on any given day.
+    </p>
+  </div>
+  <div
+    className="css-56tzch"
+  >
+    <h2
+      className="chakra-heading css-0"
+    >
+      As many rounds as possible (AMRAP):
+    </h2>
+    <p
+      className="chakra-text css-0"
+    >
+      Complete a circuit as many times as you can within a given time frame. For example, six-minute AMRAP: 5 deadlifts, 10 pullups, 20 double unders. When the six minutes is up, record your total rounds completed. Note: AMRAP may also mean “as many reps as possible.”
+    </p>
+  </div>
+  <div
+    className="css-56tzch"
+  >
+    <h2
+      className="chakra-heading css-0"
+    >
+      MetCon:
+    </h2>
+    <p
+      className="chakra-text css-0"
+    >
+      Short for metabolic conditioning, this CrossFit devil is usually a few exercises repeated AMRAP-style. The “Cindy” workout of the day (20 minutes of 5 pullups, 10 pushups, and 15 squats) is a good example. Some boxes offer MetCon-only classes for anybody who wants to steer clear of the heavy lifting associated with standard CrossFit WODs.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Check if routes work  renders Favourites page correctly in the proper route. 1`] = `
+<div
+  className="css-1166ll3"
+>
+  <div
+    className="css-gmuwbf"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="darkgray"
+        fill="currentColor"
+        fontSize="2em"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "darkgray",
+          }
+        }
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M485.6 249.9L198.2 498c-8.3 7.1-8.3 20.8 0 27.9l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9zm320 0L518.2 498a18.6 18.6 0 0 0-6.2 14c0 5.2 2.1 10.4 6.2 14l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9z"
+        />
+      </svg>
+    </button>
+  </div>
+  <h1
+    className="chakra-heading css-16f1609"
+  >
+    Favourite WODs
+  </h1>
+  <div
+    className="css-1v8nkjm"
+  >
+    <span
+      className="css-z730za"
+    >
+      <a
+        href="/wods/undefined"
+        onClick={[Function]}
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Check if routes work  renders Home page correctly in the proper route. 1`] = `
+<div
+  className="css-128chhw"
+>
+  <div
+    className="css-rn9ki1"
+  >
+    <div
+      className="css-1gy61cu"
+    >
+      <div
+        className="css-26xpnt"
+      >
+        <div
+          className="css-kae6bt"
+        >
+          <p
+            className="chakra-text css-1vhs2ha"
+          >
+            Welcome to Find my Wod!
+          </p>
+          <p
+            className="chakra-text css-uq0a7f"
+          >
+            Choose an option to start.
+          </p>
+        </div>
+        <a
+          className="button"
+          href="/login"
+          onClick={[Function]}
+        >
+           Log In 
+        </a>
+        <a
+          className="button"
+          href="/signin"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Check if routes work  renders Login page correctly in the proper route. 1`] = `
+<div
+  className="css-128chhw"
+>
+  <div
+    className="css-rn9ki1"
+  >
+    <div
+      className="css-26xpnt"
+    >
+      <form>
+        <p
+          className="chakra-text css-1vhs2ha"
+        >
+          Log In
+        </p>
+        <p
+          className="chakra-text css-uq0a7f"
+        >
+          Hello there! Log in to start using Find My Wod.
+        </p>
+        <input
+          id="email"
+          onChange={[Function]}
+          placeholder="E-mail"
+          required={true}
+          type="email"
+        />
+        <input
+          id="password"
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+        <button
+          className="button"
+          onClick={[Function]}
+          type="submit"
+        >
+          Log In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Check if routes work  renders SingUp page correctly in the proper route. 1`] = `
+<div
+  className="css-128chhw"
+>
+  <div
+    className="css-rn9ki1"
+  >
+    <div
+      className="css-26xpnt"
+    >
+      <form>
+        <p
+          className="chakra-text css-1vhs2ha"
+        >
+          Sign Up
+        </p>
+        <p
+          className="chakra-text css-uq0a7f"
+        >
+          Hello there! Sing in to start using Find My Wod.
+        </p>
+        <input
+          id="emailSignIn"
+          onChange={[Function]}
+          placeholder="E-mail"
+          required={true}
+          type="email"
+        />
+        <input
+          id="passwordSignIn"
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+        <input
+          id="password_confirmation"
+          onChange={[Function]}
+          placeholder="Password Confirmation"
+          required={true}
+          type="password"
+        />
+        <button
+          className="button"
+          onClick={[Function]}
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Check if routes work  renders WodId page correctly in the proper route. 1`] = `
+<div
+  className="css-1eb1udp"
+>
+  <div
+    className="css-gmuwbf"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        color="darkgray"
+        fill="currentColor"
+        fontSize="2em"
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "darkgray",
+          }
+        }
+        viewBox="0 0 1024 1024"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M485.6 249.9L198.2 498c-8.3 7.1-8.3 20.8 0 27.9l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9zm320 0L518.2 498a18.6 18.6 0 0 0-6.2 14c0 5.2 2.1 10.4 6.2 14l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="css-1v8nkjm"
+  >
+    <div
+      className="chakra-aspect-ratio css-103ady7"
+    >
+      <iframe
+        allowFullScreen={true}
+        src="https://www.youtube.com/embed/test"
+        title="test"
+      />
+    </div>
+    <div
+      className="css-759ns7"
+    >
+      <h2
+        className="chakra-heading css-0"
+        s="h1"
+      >
+        test
+      </h2>
+      <p
+        className="chakra-text css-56tzch"
+      >
+        test
+      </p>
+      <button
+        className="button"
+        id="unfavourite"
+        onClick={[Function]}
+        type="button"
+      >
+        Remove from Favourites
+      </button>
+    </div>
+  </div>
+</div>
+`;
