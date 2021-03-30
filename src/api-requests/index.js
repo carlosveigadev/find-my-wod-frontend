@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://find-my-wod-api.herokuapp.com';
+const URL = 'http://localhost:3001';
 
 export const logInUser = data => axios({
   url: `${URL}/auth/login`,
@@ -43,6 +43,7 @@ export const getWods = async token => {
 };
 
 export const fetchFavourites = async token => {
+  console.log(token);
   try {
     const response = await axios({
       url: `${URL}/api/v1/favourites`,
