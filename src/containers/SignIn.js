@@ -74,10 +74,20 @@ const SignIn = ({ userData }) => {
             <input type="email" id="emailSignIn" placeholder="E-mail" required onChange={handleChange} />
             <input type="password" id="passwordSignIn" placeholder="Password" required onChange={handleChange} />
             <input type="password" id="password_confirmation" placeholder="Password Confirmation" required onChange={handleChange} />
-            <button className={style.button} type="submit" onClick={handleSubmit}>Sign In</button>
+            <button className={style.button} type="submit" onClick={handleSubmit}>Sign Up</button>
+            <button
+              type="button"
+              onClick={() => {
+                history.push('/login');
+              }}
+            >
+              Log In
+            </button>
           </form>
         </Flex>
+
       </Box>
+
     </Box>
   );
 };

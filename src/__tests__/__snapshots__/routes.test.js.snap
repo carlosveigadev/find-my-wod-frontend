@@ -225,6 +225,12 @@ exports[`Check if routes work  renders Login page correctly in the proper route.
         >
           Log In
         </button>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Sign Up
+        </button>
       </form>
     </div>
   </div>
@@ -283,6 +289,12 @@ exports[`Check if routes work  renders SingUp page correctly in the proper route
       </form>
     </div>
   </div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Log In
+  </button>
 </div>
 `;
 

@@ -74,6 +74,15 @@ const Login = ({ userData }) => {
             <input type="email" id="email" placeholder="E-mail" required onChange={handleChange} />
             <input type="password" id="password" placeholder="Password" required onChange={handleChange} />
             <button className={style.button} type="submit" onClick={handleSubmit}>Log In</button>
+            <button
+              type="button"
+              onClick={() => {
+                history.push('/signin');
+              }}
+            >
+              Sign Up
+
+            </button>
           </form>
         </Flex>
       </Box>
