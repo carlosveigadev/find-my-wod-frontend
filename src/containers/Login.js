@@ -49,9 +49,9 @@ const Login = ({ userData }) => {
       history.push('/');
     } else {
       toast({
-        position: 'bottom-left',
-        title: 'Something went wrong!',
-        description: 'Sorry, refresh the page and try again.',
+        position: 'bottom',
+        title: 'Invalid Credentials!',
+        description: 'Try again or Sign Up.',
         status: 'error',
         duration: 3000,
         isClosable: true,
