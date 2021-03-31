@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import {
-  logInUser, SignInRequest, getWods, fetchFavourites, favouriteRequest,
+  logInUser, SignInRequest, getWods, fetchFavourites, favouriteDelete, favouriteCreate,
 } from '../api-requests';
 
 describe('Test the API requests', () => {
@@ -46,23 +46,23 @@ describe('Test the API requests', () => {
     expect(typeof result).toBe('object');
   });
 
-  test('favouriteRequest using favourite is working and returns an object', async () => {
+  test('favouriteCreate is working and returns an object', async () => {
     mock.onPost('https://find-my-wod-api.herokuapp.com/api/v1/api/v1/wods/1/favourite').reply(200, {
       res: { },
     });
     const token = 'test';
 
-    const result = await favouriteRequest(token);
+    const result = await favouriteCreate(token);
     expect(typeof result).toBe('object');
   });
 
-  test('favouriteRequest using unfavourite is working and returns an object', async () => {
+  test('favouriteDelete is working and returns an object', async () => {
     mock.onPost('https://find-my-wod-api.herokuapp.com/api/v1/api/v1/wods/1/unfavourite').reply(200, {
       res: { },
     });
     const token = 'test';
 
-    const result = await favouriteRequest(token);
+    const result = await favouriteDelete(token);
     expect(typeof result).toBe('object');
   });
 });
