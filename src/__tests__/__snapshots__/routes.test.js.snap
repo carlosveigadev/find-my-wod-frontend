@@ -284,17 +284,17 @@ exports[`Check if routes work  renders SingUp page correctly in the proper route
           onClick={[Function]}
           type="submit"
         >
-          Sign In
+          Sign Up
+        </button>
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Log In
         </button>
       </form>
     </div>
   </div>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    Log In
-  </button>
 </div>
 `;
 

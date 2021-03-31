@@ -106,7 +106,6 @@ describe('Check if routes work ', () => {
             <Favourites />
           </BrowserRouter>
         </Provider>,
-
       )
       .toJSON();
     expect(favourites).toMatchSnapshot();
