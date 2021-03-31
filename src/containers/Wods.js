@@ -16,12 +16,9 @@ const Wods = ({ userToken, favouriteData }) => {
 
   useEffect(async () => {
     const allWods = await getWods(userToken);
-    setWods(allWods);
-  }, []);
-
-  useEffect(async () => {
     const newData = await fetchFavourites(userToken);
     favouriteData(newData);
+    setWods(allWods);
   }, []);
 
   const sliderSettings = {
