@@ -10,7 +10,7 @@ describe('Test the API requests', () => {
     mock.onGet('https://find-my-wod-api.herokuapp.com/auth/login').reply(200, {
       res: { data: { auth_token: 'test' } },
     });
-    const data = { user: 'test@test.com', password: '123' };
+    const data = { user: 'fry@fry.com', password: '123' };
 
     const result = await logInUser(data);
     expect(typeof result).toBe('object');
