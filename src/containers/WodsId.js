@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { AiOutlineBackward } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { favouriteRequest, fetchFavourites } from '../api-requests';
+import { favouriteCreate, favouriteDelete, fetchFavourites } from '../api-requests';
 import { favouriteData } from '../redux/actions';
 import style from '../assets/css/WodsId.module.css';
 
@@ -20,7 +20,12 @@ const WodsId = ({
 
   const handleSubmit = async e => {
     const status = e.target.id;
-    await favouriteRequest(wod.id, status, userToken);
+    if (status === 'favourite') {
+      await favouriteCreate(wod.id, userToken);
+    }
+    if (status === 'unfavourite') {
+      await favouriteDelete(wod.id, userToken);
+    }
     const newData = await fetchFavourites(userToken);
     favouriteData(newData);
   };
