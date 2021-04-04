@@ -12,7 +12,7 @@ export const logInUser = data => axios({
 }).then(res => res).catch(err => err);
 
 export const SignInRequest = async data => axios({
-  url: `${URL}/signup`,
+  url: `${URL}/users`,
   data: JSON.stringify({
     email: data.emailSignIn,
     password: data.passwordSignIn,
