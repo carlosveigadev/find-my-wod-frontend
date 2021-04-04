@@ -3,7 +3,7 @@ import axios from 'axios';
 const URL = 'https://find-my-wod-api.herokuapp.com';
 
 export const logInUser = data => axios({
-  url: `${URL}/auth/login`,
+  url: `${URL}/authentication`,
   data: JSON.stringify(data),
   method: 'POST',
   headers: {
