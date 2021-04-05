@@ -16,6 +16,13 @@ const Login = ({ userData }) => {
     password: '',
   });
 
+  const populateReduxStore = (isLoggedIn, userToken, userInfo, userId) => ({
+    isLoggedIn,
+    userToken,
+    userInfo,
+    userId,
+  });
+
   const handleChange = e => {
     const { id, value } = e.target;
     setState(prevState => ({
@@ -31,12 +38,11 @@ const Login = ({ userData }) => {
     e.preventDefault();
     const data = await logInUser(state);
     if (data.statusText === 'OK') {
-      const populateReduxStore = {
-        isLoggedIn: true,
-        userToken: data.data.auth_token,
-        userInfo: jwt(data.data.auth_token).email,
-        userId: jwt(data.data.auth_token).user_id,
-      };
+      populateReduxStore(
+        true, data.data.auth_token,
+        jwt(data.data.auth_token).email,
+        jwt(data.data.auth_token).user_id,
+      );
       toast({
         position: 'bottom-left',
         title: 'You are Logged In!',
