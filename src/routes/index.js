@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from '../components/Home';
+import Home from '../containers/Home';
 import Login from '../containers/Login';
 import SigIn from '../containers/SignIn';
 import WodsId from '../containers/WodsId';

@@ -16,8 +16,8 @@ import {
   Heading,
 } from '@chakra-ui/react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import Navbar from './Navbar';
-import Wods from '../containers/Wods';
+import Navbar from '../components/Navbar';
+import Wods from './Wods';
 import style from '../assets/css/Home.module.css';
 
 const Home = ({ isLoggedIn }) => {
@@ -45,7 +45,7 @@ const Home = ({ isLoggedIn }) => {
           </DrawerOverlay>
         </Drawer>
         <Center py="0.75em">
-          <Heading>Wods</Heading>
+          <Heading>WODs</Heading>
         </Center>
         <Wods />
       </>

@@ -38,11 +38,6 @@ const Login = ({ userData }) => {
     e.preventDefault();
     const data = await logInUser(state);
     if (data.statusText === 'OK') {
-      populateReduxStore(
-        true, data.data.auth_token,
-        jwt(data.data.auth_token).email,
-        jwt(data.data.auth_token).user_id,
-      );
       toast({
         position: 'bottom-left',
         title: 'You are Logged In!',
@@ -51,7 +46,11 @@ const Login = ({ userData }) => {
         duration: 3000,
         isClosable: true,
       });
-      userData(populateReduxStore);
+      userData(populateReduxStore(
+        true, data.data.auth_token,
+        jwt(data.data.auth_token).email,
+        jwt(data.data.auth_token).user_id,
+      ));
       history.push('/');
     } else {
       toast({

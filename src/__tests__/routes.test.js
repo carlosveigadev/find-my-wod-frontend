@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import userReducer from '../redux/reducers/user';
 import favouriteReducer from '../redux/reducers/favourites';
-import Home from '../components/Home';
+import Home from '../containers/Home';
 import Login from '../containers/Login';
 import WodsId from '../containers/WodsId';
 import Favourites from '../containers/Favourites';
