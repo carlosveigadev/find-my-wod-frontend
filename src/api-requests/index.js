@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const URL = 'https://find-my-wod-api.herokuapp.com';
+// const URL = 'https://find-my-wod-api.herokuapp.com';
+const URL = 'http://localhost:3001';
 
 export const logInUser = data => axios({
   url: `${URL}/authentication`,
@@ -61,15 +62,17 @@ export const fetchFavourites = async token => {
 };
 
 export const favouriteCreate = async (wodId, token) => {
+  console.log(JSON.stringify({ favourite: { wod_id: wodId } }));
   try {
     const response = await axios({
-      url: `${URL}/api/v1/favourites/${wodId}/`,
+      url: `${URL}/api/v1/favourites`,
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
         Authorization: token,
       },
+      data: JSON.stringify({ favourite: { wod_id: wodId } }),
     });
     const newData = await response.data;
     return newData;
