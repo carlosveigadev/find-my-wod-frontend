@@ -25,7 +25,7 @@ const Favourites = ({ favouriteWods }) => {
         <Heading as="h1" size="xl" mt="1em">Favourite WODs</Heading>
         <Box mt="2em">
           {favouriteWods.map(wod => (
-            <Tag key={wod.id} p="15px" mr="1em" fontSize="1.5em" colorScheme="orange">
+            <Tag key={wod.id} p="15px" mr="1em" mb="1em" fontSize="1.5em" colorScheme="orange">
               <Link to={{ pathname: `/wods/${wod.id}`, state: { wod } }}>
                 {wod.title}
               </Link>
