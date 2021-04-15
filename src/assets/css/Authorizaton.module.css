@@ -1,0 +1,37 @@
+.button {
+  align-self: center;
+  color: white;
+  background-color: #c05621;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: #ed8936;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-self: center;
+}
+
+form input {
+  height: 30px;
+  margin: 0.5em;
+  border-radius: 20px;
+  text-indent: 10px;
+}
+
+.buttonLogout {
+  align-self: center;
+  color: white;
+  background-color: #c05621;
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  margin: 5px;
+  position: absolute;
+  bottom: 3em;
+}
